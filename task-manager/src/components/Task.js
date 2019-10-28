@@ -9,17 +9,21 @@ const styles = {
   borderRadius: '7px'
 };
 
-export default ({ task: { name, description, id, startDate,endDate }, onDelete }) => {
+const Task = (props) => {
+  const {name,description,id,startDate,endDate,onDelete} = props.task
+  console.log(name)
   return (
     <div style={ styles }>
       <h1 className='display-1'></h1>
       <h2>{ name }</h2>
       <p>{ description }</p>
-      <h2>{ startDate }</h2>
-      <h2>{ endDate }</h2>
+      <p>{ startDate }</p>
+      <p>{ endDate }</p>
       <button className="btn btn-danger" type="button" onClick={() => onDelete(id)}>
         Remove Feeds
       </button>
     </div>
-  );
-};
+  )
+}
+
+export default Task

@@ -66,8 +66,8 @@ class Newtask extends React.Component {
 
             <div className='ip1'>
               <textarea
-              cols="10"
-              rows="4"  
+              cols="20"
+              rows="4"
               type='text'
               name='description'
               placeholder='Enter task name'

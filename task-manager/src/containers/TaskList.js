@@ -6,13 +6,11 @@ import { deleteTask } from '../actions';
 function TaskList({ tasks, onDelete }) {
   return (
     <div>
-      {
-        tasks.map(task => {
+      {tasks.map(task => {
           return (
             <Task task={ task } onDelete={ onDelete } key={ task.id } />
           );
-      })
-    }
+      })}
     </div>
   );
 }

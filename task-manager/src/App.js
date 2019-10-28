@@ -1,14 +1,18 @@
 import React from 'react';
 import './App.css';
-import createTask from './containers/createTask';
-import Newtask from './components/Newtask'
+import CreateTask from './containers/CreateTask';
+import TaskList from './containers/TaskList'
 
-function App() {
-  return (
-    <div className="App">
-      <Newtask/>
-    </div>
-  );
+
+class App extends React.Component {
+  render () {
+    return(
+      <div className="App">
+        <CreateTask/>
+        <TaskList/>
+      </div>
+    )
+  }
 }
 
 export default App;

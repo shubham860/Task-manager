@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Newtask from './components/Newtask'
 
 function App() {
   return (
     <div className="App">
-      
+      <Newtask/>
     </div>
   );
 }

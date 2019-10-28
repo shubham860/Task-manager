@@ -1,29 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import Task from '../components/Task'
-import {deleteTask} from '../actions'
+import React from 'react';
+import { connect } from 'react-redux';
+import Task from '../components/Task';
+import { deleteTask } from '../actions';
 
-const TaskList = ({tasks,onDelete}) => {
+function TaskList({ tasks, onDelete }) {
   return (
     <div>
       {
-        tasks.map(task=>{
-          return(
-            <Task task={task} onDelete={onDelete} key={post.id}/>
+        tasks.map(task => {
+          return (
+            <Task task={ task } onDelete={ onDelete } key={ task.id } />
           );
-        })
-      }
+      })
+    }
     </div>
-  )
+  );
 }
 
 const mapStateToProps = state => {
   return {
-      tasks : state.tasks
+    tasks: state
   };
 };
-
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -33,4 +31,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(TaskList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TaskList);

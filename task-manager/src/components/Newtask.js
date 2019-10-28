@@ -34,8 +34,20 @@ class Newtask extends React.Component {
 
   submit = event => {
     event.preventDefault();
-    console.log(this.state)
+    if (this.state.name.trim() && this.state.description.trim()) {
+      this.props.onAddTask(this.state);
+      this.resets();
+    }
   }
+
+  resets = () => {
+    this.setState({
+      name : '',
+      description : '',
+      startDate : new Date(),
+      endDate : new Date()
+    });
+  };
   render () {
       return(
         <div class='main'>
@@ -54,10 +66,12 @@ class Newtask extends React.Component {
 
             <div className='ip1'>
               <textarea
+              cols="10"
+              rows="4"  
               type='text'
-              name='descripton'
+              name='description'
               placeholder='Enter task name'
-              value={this.state.descripton}
+              value={this.state.description}
               onChange={this.input_handler}
               className='ip'>
               </textarea>
@@ -77,7 +91,7 @@ class Newtask extends React.Component {
 
             <div className='btns'>
               <button type='submit'>Add task</button>
-              <button type='button' onClick={this.reset}>Reset</button>
+              <button type='button' onClick={this.resets}>Reset</button>
             </div>
 
           </form>

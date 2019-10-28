@@ -9,12 +9,12 @@ const styles = {
   borderRadius: '7px'
 };
 
-export default ({ post: { name, descripton, id, startDate,endDate }, onDelete }) => {
+export default ({ task: { name, description, id, startDate,endDate }, onDelete }) => {
   return (
     <div style={ styles }>
       <h1 className='display-1'></h1>
       <h2>{ name }</h2>
-      <p>{ descripton }</p>
+      <p>{ description }</p>
       <h2>{ startDate }</h2>
       <h2>{ endDate }</h2>
       <button className="btn btn-danger" type="button" onClick={() => onDelete(id)}>

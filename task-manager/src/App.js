@@ -8,8 +8,8 @@ class App extends React.Component {
   render () {
     return(
       <div className="App">
-        <CreateTask/>
-        <TaskList/>
+        <div><CreateTask/></div>
+        <div><TaskList/></div>
       </div>
     )
   }

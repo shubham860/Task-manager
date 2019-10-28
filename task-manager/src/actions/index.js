@@ -5,7 +5,7 @@ export const createTask = ({name,description,startDate,endDate}) => {
   return {
   type : ADD_TASK,
   payload : {
-    id = uuidv4(),
+    id : uuidv4(),
     name,
     description,
     startDate,

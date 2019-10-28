@@ -28,7 +28,7 @@ class Newtask extends React.Component {
 
   endChange = date => {
     this.setState({
-      startDate: date
+      endDate: date
     });
   };
 

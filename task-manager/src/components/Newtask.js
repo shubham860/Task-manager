@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Main from './Main'
 
 class Newtask extends React.Component {
   constructor(){
@@ -10,7 +11,9 @@ class Newtask extends React.Component {
       name : '',
       description : '',
       startDate : new Date(),
-      endDate : new Date()
+      endDate : new Date(),
+      submit : true,
+      List : false
     }
   }
 
@@ -34,10 +37,12 @@ class Newtask extends React.Component {
 
   submit = event => {
     event.preventDefault();
-    if (this.state.name.trim() && this.state.description.trim()) {
-      this.props.onAddTask(this.state);
-      this.resets();
-    }
+    this.props.onAddTask(this.state);
+    this.resets();
+    this.setState({
+      submit : false,
+      List : true
+    })
   }
 
   resets = () => {
@@ -49,10 +54,12 @@ class Newtask extends React.Component {
     });
   };
   render () {
+    const {submit,List} = this.state
       return(
+        <div>
+          { submit &&
         <div class='main'>
           <h1>New post</h1>
-
           <form onSubmit={this.submit}>
             <div className='ip1'>
               <input
@@ -97,6 +104,11 @@ class Newtask extends React.Component {
           </form>
 
         </div>
+      }
+      {
+        List && <Main/>
+      }
+    </div>
       )
   }
 }

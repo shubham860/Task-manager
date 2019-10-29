@@ -10,8 +10,7 @@ const styles = {
 };
 
 const Task = (props) => {
-  const {name,description,id,startDate,endDate,onDelete} = props.task
-  console.log(name)
+  const {name,description,id,startDate,endDate,onDelete} = props.task;
   return (
     <div style={ styles }>
       <h1 className='display-1'></h1>

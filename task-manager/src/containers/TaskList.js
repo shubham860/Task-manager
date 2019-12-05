@@ -3,21 +3,27 @@ import { connect } from 'react-redux';
 import Task from '../components/Task';
 import { deleteTask } from '../actions';
 
-function TaskList({ tasks, onDelete }) {
+class TaskList extends React.Component{
+  constructor(props){
+    super(props)
+  }
+render(){
+  console.log(this.props)
   return (
     <div>
-      {tasks.map(task => {
+      {this.props.tasks.map(task => {
           return (
-            <Task task={ task } onDelete={ onDelete } key={ task.id } />
+            <Task task={ task } onDelete={ this.props.onDelete } key={ task.id } />
           );
       })}
     </div>
   );
 }
+}
 
 const mapStateToProps = state => {
   return {
-    tasks: state
+    tasks: state.taskReducers
   };
 };
 

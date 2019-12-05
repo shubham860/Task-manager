@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import CreateTask from '../containers/CreateTask';
 import TaskList from '../containers/TaskList'
 
